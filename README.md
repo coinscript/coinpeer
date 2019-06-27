@@ -2,17 +2,19 @@
 
 **The project is in the early stages of development.**
 
+A p2p peer connects to bitcoinSV node.
+
 # how to use
 
 clone this repo.
 
 ```
 $ iex -s mix
-> Coinpeer.mount
+iex> Coinpeer.mount
 ```
 
 # TODOs
 
-- [*] send/receive p2p message
+- [x] send/receive p2p message
 - [ ] message parsing
 - [ ] get transactions
