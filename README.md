@@ -1,21 +1,18 @@
 # Coinpeer
 
-**TODO: Add description**
+**The project is in the early stages of development.**
 
-## Installation
+# how to use
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `coinpeer` to your list of dependencies in `mix.exs`:
+clone this repo.
 
-```elixir
-def deps do
-  [
-    {:coinpeer, "~> 0.1.0"}
-  ]
-end
+```
+$ iex -s mix
+> Coinpeer.mount
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/coinpeer](https://hexdocs.pm/coinpeer).
+# TODOs
 
+- [*] send/receive p2p message
+- [ ] message parsing
+- [ ] get transactions
