@@ -3,6 +3,7 @@ defmodule Coinpeer.Msg do
   alias Coinpeer.Crypto
   alias Coinpeer.Net
   alias Coinpeer.Util
+  alias Coinpeer.Tx
 
   @protocol_version 31800
 
@@ -11,6 +12,7 @@ defmodule Coinpeer.Msg do
     make_msg(net, cmd, payload)
   end
 
+  ## Messages
   def version do
     services = <<1, 0::7*8>>
     timestamp = Util.timestamp()
@@ -31,6 +33,27 @@ defmodule Coinpeer.Msg do
   end
 
   def verack, do: <<>>
+
+  def tx(tx = %Tx{}) do
+    binary_txins = serialize(:txins, tx.txins)
+    binary_txouts = serialize(:txouts, tx.txouts)
+    <<@protocol_version::32-little,
+      binary_txins,
+      binary_txouts,
+      tx.locktime::32-little>>
+  end
+
+  ## serialize
+
+  def serialize(:txins, txins) do
+
+  end
+
+  def serialize(:txouts, txins) do
+
+  end
+
+  ## internals
 
   defp make_msg(net, cmd, payload) do
     magic = Net.magic(net)
