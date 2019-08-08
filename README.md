@@ -6,11 +6,15 @@ A p2p peer connects to bitcoinSV node.
 
 # how to use
 
-clone this repo.
-
 ```
 $ iex -s mix
 iex> Coinpeer.mount
+```
+
+## Join scaling test network.
+
+```
+iex> Coinpeer.mount(network: :stn)
 ```
 
 # TODOs

@@ -14,7 +14,7 @@ defmodule Coinpeer.Peer do
 
   """
   def start(ip, net, receiver) do
-    {:ok, socket} = :gen_tcp.connect(ip, 8333, [:binary, {:packet, 0}, {:active, false}])
+    {:ok, socket} = :gen_tcp.connect(ip, Coinpeer.Net.port(net), [:binary, {:packet, 0}, {:active, false}])
     loop(%{@peer|socket: socket, state: :start, receiver: receiver, net: net})
   end
 
